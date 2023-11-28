@@ -113,12 +113,13 @@
     Director
   </dt>
   <dd>
-    <% @the_movie.director.each do |a_director| %>
-      <% if a_director != nil %>
-        <%= a_director.name %>
-      <% else %>
-        Uh oh! We weren't able to find a director for this movie.
-      <% end %>
+    <% if @the_movie.director == nil %>
+    Uh oh! We weren't able to find a director for this movie.
+    <% else %>
+    <%= @the_movie.director.name %>
+    <% end %>
+  
+
   </dd>
 
   <dt>
